@@ -32,6 +32,7 @@ spring:
       #userAuthorizationUri: http://localhost:7070/authserver/oauth/authorize
       clientId: R2dpxQ3vPrtfgF72
       clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
+      grant-type: password
     resource:
      # userInfoUri: http://localhost:9000/user
 
