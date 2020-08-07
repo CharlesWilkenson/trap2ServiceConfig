@@ -28,7 +28,7 @@ spring:
   security:
    oauth2:
     client:
-      accessTokenUri: http://localhost:8081/authorization-server/oauth/token
+      accessTokenUri: http://localhost:8081/oauth/token
       #userAuthorizationUri: http://localhost:7070/authserver/oauth/authorize
       clientId: R2dpxQ3vPrtfgF72
       clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
