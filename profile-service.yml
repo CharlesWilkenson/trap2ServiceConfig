@@ -1,17 +1,12 @@
 # Make the application available at http://localhost:7070/authserver
 server:
-  port: 8081 
+  port: 8083
   
 spring: 
-  #application:
-  #  name: authorization-server
 
- # cloud:
-  #  config:
-   #     uri: http://localhost:8888
  
   datasource:
-    url: jdbc:mysql://localhost:3306/oauthdb?useSSL=false
+    url: jdbc:mysql://localhost:3306/dbprofile_service?useSSL=false
     username: root
     password: admin123
 #  tomcat:
@@ -30,67 +25,34 @@ spring:
       #  id:
 
 
-
-
   security:
-      oauth2:
-        client:
-          registration:
-            google:
-              clientId: 589385573959-vkil0vc6nbhn9mrf7bfg3dic3bg6u4c3.apps.googleusercontent.com
-              clientSecret: IoF-RlBq2_QMfuaeCgimSgGC
-           
-            facebook:
-              clientId: 2885289241548354
-              clientSecret: 17236906ca46e3429f2c19be0ed4cc9f
-                
-              
-            github:
-              clientId: d3e47fc2ddd966fa4352
-              clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
-              redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
-              scope:
-                - user:email
-                - read:user
-          provider:
-            facebook:
-              authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
-              tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
-              userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
-
-
-
-
-
-  
-# Our certificate settings for enabling JWT tokens
-jwt:
-  certificate:
-    store:
-      file: classpath:/certificate/mykeystore.jks
-      password: abirkhan04
-    key:
-      alias: myauthkey
-      password: abirkhan04      
-
-  
-  
-user:
-   oauth:
+   oauth2:
+    client:
+      accessTokenUri: http://localhost:8081/authorization-server/oauth/token
+      #userAuthorizationUri: http://localhost:7070/authserver/oauth/authorize
       clientId: R2dpxQ3vPrtfgF72
       clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
-      redirectUris: http://localhost:9999/login
+    resource:
+     # userInfoUri: http://localhost:9000/user
 
+      jwt:
+        keyValue: |
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhiiifKv6Otf5PyqIE+LQ
+            EiJRRh6q8piPY9Okq+RfRu9Bue0D8hq7aFxcgkLZ6Bg9CAS+w1KdaE5MMeOCVVxv
+            rpRETzVpAsh6GL5nBc679jSqMzjr3V4uty46ilL4VHKSxlZh5Nmz5EMHPI5iwpNs
+            8U5n3QiwsTk514FXad54xPSPH3i/pDzGSZHrVcwDVaOKn7gFiIqP86vkJB47JZv8
+            T6P5RK7Rj06zoG45DMGWG3DQv6o1/Jm4IJQWj0AUD3bSHqzXkPr7qyMYvkE4kyMH
+            6aVAsAYMxilZFlJMv2b8N883gdi3LEeOJo8zZr5IWyyROfepdeOL7UkAXddAj+dL
+            WQIDAQAB
+            -----END PUBLIC KEY-----  
+            
+            
+            
+            
+            
+            
+path:
+   dirname: ${user.home}/imageProfiles/  
 
-
-message:
-    badCredentials: Invalid Credentials
-    regError: An account with this email already exists
-    regSucc: Registered successfully. Please login
-    logout.success: Logged out successfully
-NotEmpty: This field is required.
-Size: 
-  userDto:
-     password: Try one with at least 8 characters.
-PasswordMatches: 
-        user: Password does not match!
+  
