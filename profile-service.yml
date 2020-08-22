@@ -24,8 +24,7 @@ spring:
        # format_sql: true
       #  id:
 
-
-  security:
+security:
    oauth2:
     client:
       accessTokenUri: http://localhost:8081/authorization-server/oauth/token
