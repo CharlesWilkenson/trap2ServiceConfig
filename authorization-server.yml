@@ -64,24 +64,6 @@ spring:
 
 
 
-  
-# Our certificate settings for enabling JWT tokens
-jwt:
-  certificate:
-    store:
-      file: classpath:/certificate/mykeystore.jks
-      password: abirkhan04
-    key:
-      alias: myauthkey
-      password: abirkhan04      
-
-  
-  
-user:
-   oauth:
-      clientId: R2dpxQ3vPrtfgF72
-      clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
-      redirectUris: http://localhost:9999/login
 
 
 
