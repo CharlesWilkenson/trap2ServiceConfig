@@ -23,7 +23,7 @@ security:
       clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9 
       grant-type: password
     resource:
-      userInfoUri: http://localhost:8082/user/me
+      userInfoUri: http://localhost:9999/user/me
 
       jwt:
         keyValue: |
