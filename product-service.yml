@@ -11,7 +11,7 @@ spring:
 
 # Configure the public key to use for verifying the incoming JWT tokens
   datasource:
-    url: jdbc:mysql://localhost:3306/dbproduct_service?useSSL=false
+    url: jdbc:mysql://localhost:3306/dbboutique_service?useSSL=false
     username: root
     password: admin123
 #  tomcat:
