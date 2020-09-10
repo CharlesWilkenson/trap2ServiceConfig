@@ -7,7 +7,7 @@ spring:
  
   datasource:
     url: jdbc:mysql://localhost:3306/dbprofile_service?useSSL=false
-    username: root
+    username: admin
     password: admin123
 #  tomcat:
 #    max-wait: 20000
