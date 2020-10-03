@@ -69,4 +69,4 @@ eureka:
             
 path:
    dirname: ${user.home}/imageProduits/           
-            
+   dirname2: ${user.home}/logoBoutiques/ 
