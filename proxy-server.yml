@@ -48,9 +48,9 @@ zuul:
      # strip-prefix: false   
       
     #operation
-    operation:
-      path: /operation-service/**
-      serviceId: operation-service 
+    offre:
+      path: /offre-service/**
+      serviceId: offre-service 
       
          #operation
     user:
