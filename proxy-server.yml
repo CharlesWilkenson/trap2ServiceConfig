@@ -35,10 +35,10 @@ zuul:
     resource:
 
       #product
-    product:
-      path: /product-service/**
+    boutique:
+      path: /boutique-service/**
       sensitiveHeaders:
-      serviceId: product-service 
+      serviceId: boutique-service 
     #  strip-prefix: false  
         #profile
     profile:
