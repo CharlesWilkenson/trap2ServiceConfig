@@ -47,9 +47,10 @@ zuul:
       serviceId: profile-service  
      # strip-prefix: false   
       
-    #operation
+    #offre
     offre:
       path: /offre-service/**
+      sensitiveHeaders:
       serviceId: offre-service 
       
          #operation
