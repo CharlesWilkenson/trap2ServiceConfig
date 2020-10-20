@@ -1,5 +1,5 @@
 server:
-    port: 8082
+    port: 8084
 spring:
  # cloud:
   #  config:
@@ -10,14 +10,10 @@ spring:
 
 # Configure the public key to use for verifying the incoming JWT tokens
 
-data
-  mongodb
-    authentication-database: admin
-    username: root
-    password: root
-    database: test_db
-    port: 27017
-    host: localhost
+
+data:
+   mongodb: 
+       uri: mongodb://localhost/dbOffre
 
 security:
   oauth2:
