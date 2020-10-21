@@ -6,9 +6,9 @@ server:
     
     
 spring:
- # cloud:
-  #  config:
-   #      uri: http://localhost:8888
+ data:
+   mongodb: 
+       uri: mongodb://localhost/dbOffre
        
 
 
@@ -16,9 +16,7 @@ spring:
 # Configure the public key to use for verifying the incoming JWT tokens
 
 
-data:
-   mongodb: 
-       uri: mongodb://localhost/dbOffre
+
 
 security:
   oauth2:
