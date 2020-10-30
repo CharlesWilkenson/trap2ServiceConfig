@@ -5,10 +5,7 @@ server:
         enabled: false
     
     
-spring:
- data:
-   mongodb: 
-       uri: mongodb://localhost/dbOffre
+
        
 
 
@@ -57,4 +54,14 @@ eureka:
             
             
 path:
-   dirname: ${user.home}/imageProduits/    
+   dirname: ${user.home}/imageProduits/ 
+   
+   
+   
+   
+   
+   
+spring:
+ data:
+   mongodb: 
+       uri: mongodb://localhost/dbOffre   
