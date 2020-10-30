@@ -1,0 +1,80 @@
+# Make the application available at http://localhost:7070/authserver
+server:
+  servlet:
+    context-path: /authorization-server
+  port: 8081 
+  
+spring: 
+  #application:
+  #  name: authorization-server
+
+ # cloud:
+  #  config:
+   #     uri: http://localhost:8888
+ 
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauthdb?useSSL=false
+    username: admin
+    password: admin123
+#  tomcat:
+#    max-wait: 20000
+#    max-active: 50
+#    max-idle: 20
+#    min-idle: 15
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+       # format_sql: true
+      #  id:
+
+
+
+
+  security:
+      oauth2:
+        client:
+          registration:
+            google:
+              clientId: 589385573959-vkil0vc6nbhn9mrf7bfg3dic3bg6u4c3.apps.googleusercontent.com
+              clientSecret: IoF-RlBq2_QMfuaeCgimSgGC
+           
+            facebook:
+              clientId: 2885289241548354
+              clientSecret: 17236906ca46e3429f2c19be0ed4cc9f
+                
+              
+            github:
+              clientId: d3e47fc2ddd966fa4352
+              clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
+              redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+              scope:
+                - user:email
+                - read:user
+          provider:
+            facebook:
+              authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
+              tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
+              userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
+
+
+
+
+
+
+
+
+message:
+    badCredentials: Invalid Credentials
+    regError: An account with this email already exists
+    regSucc: Registered successfully. Please login
+    logout.success: Logged out successfully
+NotEmpty: This field is required.
+Size: 
+  userDto:
+     password: Try one with at least 8 characters.
+PasswordMatches: 
+        user: Password does not match!
