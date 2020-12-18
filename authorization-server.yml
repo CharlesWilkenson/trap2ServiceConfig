@@ -34,31 +34,6 @@ spring:
 
 
 
-  security:
-      oauth2:
-        client:
-          registration:
-            google:
-              clientId: 589385573959-vkil0vc6nbhn9mrf7bfg3dic3bg6u4c3.apps.googleusercontent.com
-              clientSecret: IoF-RlBq2_QMfuaeCgimSgGC
-           
-            facebook:
-              clientId: 2885289241548354
-              clientSecret: 17236906ca46e3429f2c19be0ed4cc9f
-                
-              
-            github:
-              clientId: d3e47fc2ddd966fa4352
-              clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
-              redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
-              scope:
-                - user:email
-                - read:user
-          provider:
-            facebook:
-              authorizationUri: https://www.facebook.com/v3.0/dialog/oauth
-              tokenUri: https://graph.facebook.com/v3.0/oauth/access_token
-              userInfoUri: https://graph.facebook.com/v3.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
 
 
 
