@@ -13,7 +13,7 @@ security:
       clientId: R2dpxQ3vPrtfgF72
       clientSecret: fDw7Mpkk5czHNuSRtmhGmAGL42CaxQB9
     resource:
-     # userInfoUri: http://localhost:9000/user
+      userInfoUri: http://localhost:9000/user
 
       jwt:
         keyValue: |
