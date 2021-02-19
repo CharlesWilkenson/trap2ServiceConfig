@@ -27,47 +27,7 @@ security:
             WQIDAQAB
             -----END PUBLIC KEY----- 
 
-zuul:
-  ribbon:
-     eager-load:
-        enabled: true
-  sensitiveHeaders: Cookie,Set-Cookie
-  routes:
-    resource:
-
-      #product
-    boutique:
-      path: /boutique-service/**
-      sensitiveHeaders:
-      serviceId: boutique-service 
-    #  strip-prefix: false  
-        #profile
-    profile:
-      path: /profile-service/**
-      sensitiveHeaders: 
-      serviceId: profile-service  
-     # strip-prefix: false   
-      
-    #offre
-    offre:
-      path: /offre-service/**
-      sensitiveHeaders:
-      serviceId: offre-service 
-      
-         #operation
-    user:
-      path: /user-service/**
-      serviceId: user-service 
-      
-       #auth
-    auth-server:
-      path: http://localhost:7070/createUser
-      serviceId: authorization-server   
-      
-   #operation
-    client-space:
-      path: /client-space-service/**
-      serviceId: client-space-service           
+        
       
     
 # Make sure the OAuth2 token is only relayed when using the internal API,
